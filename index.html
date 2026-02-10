@@ -1,12 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Webpage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Truth Seeker | Raghu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
 
-    <h1>Hello World!</h1>
-    <p>This is my first paragraph on a webpage.</p>
+    <header class="bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white py-24 px-6 shadow-2xl relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-block bg-blue-500 text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-widest uppercase">The Case Study</div>
+            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter italic">AI TRUTH SEEKER</h1>
+            <p class="text-xl md:text-2xl opacity-90 font-light max-w-2xl mx-auto">Exposing the gap between AI hype and Organizational Intelligence.</p>
+            <div class="mt-8 flex justify-center gap-4">
+                <span class="bg-white/10 backdrop-blur-md px-4 py-2 rounded-lg text-sm border border-white/20">Microsoft Hyderabad | Feb 21</span>
+            </div>
+        </div>
+    </header>
 
+    <main class="max-w-5xl mx-auto px-6 py-16">
+        
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold text-slate-800 mb-8 border-l-4 border-blue-600 pl-4">The Truth About Modern AI</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-4">
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        While MNCs are sprinting to "dump" skill sets onto employees through week-long courses, they are missing the fundamental truth: **Public AI is a commodity. Private Data is the asset.**
+                    </p>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        True AI isn't what you find in a public subscription. It’s the intelligence built from your <strong>internal logs, your project impediments, and your unique employee skill boards.</strong>
+                    </p>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-3xl text-blue-400 shadow-inner">
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">The "Truth Seeker" Equation</h4>
+                    <div class="text-3xl font-mono">
+                        (Logs + Skills) × Private Cloud = <span class="text-white italic">Real Intelligence</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="mb-20 bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold mb-8">Phase 1: Engineering the Foundation</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b-2 border-slate-100">
+                            <th class="py-4 font-bold text-slate-400 uppercase text-xs">Provider</th>
+                            <th class="py-4 font-bold text-slate-400 uppercase text-xs">Data Engineering</th>
+                            <th class="py-4 font-bold text-slate-400 uppercase text-xs">Private AI Ops</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-50">
+                        <tr>
+                            <td class="py-6 font-bold text-blue-600">Azure</td>
+                            <td class="py-6">Microsoft Fabric, Data Factory</td>
+                            <td class="py-6">Azure OpenAI, AI Search (Vector)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-6 font-bold text-green-600">GCP</td>
+                            <td class="py-6">BigQuery, Cloud Dataflow</td>
+                            <td class="py-6">Vertex AI (Gemini 1.5), Model Garden</td>
+                        </tr>
+                        <tr>
+                            <td class="py-6 font-bold text-orange-600">AWS</td>
+                            <td class="py-6">AWS Glue, Redshift</td>
+                            <td class="py-6">Amazon Bedrock, SageMaker</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="bg-indigo-50 rounded-3xl p-10 mb-20 border border-indigo-100">
+            <h2 class="text-3xl font-bold mb-4 text-slate-800">Ecosystem Explorer</h2>
+            <p class="text-slate-500 mb-8">Search for specific tools to see how they align with the Truth Seeker framework.</p>
+            <input type="text" id="cloudSearch" onkeyup="filterServices()" 
+                   placeholder="Try searching 'Logs' or 'Gemini'..." 
+                   class="w-full bg-white border border-indigo-200 rounded-2xl py-5 px-8 text-lg shadow-sm focus:ring-4 focus:ring-blue-200 transition-all outline-none">
+            
+            <div class="grid md:grid-cols-3 gap-6 mt-10" id="servicesList">
+                <div class="cloud-card bg-white p-6 rounded-2xl border border-indigo-50 shadow-sm" data-name="Azure OpenAI Search Logs Fabric">
+                    <h4 class="font-bold text-blue-700">Azure Enterprise</h4>
+                    <p class="text-sm text-slate-500 mt-2">Private search over internal documentation and logs.</p>
+                </div>
+                <div class="cloud-card bg-white p-6 rounded-2xl border border-indigo-50 shadow-sm" data-name="GCP Vertex AI Gemini BigQuery ML">
+                    <h4 class="font-bold text-green-700">GCP Dataflow</h4>
+                    <p class="text-sm text-slate-500 mt-2">Serverless ML models trained on your BigQuery data.</p>
+                </div>
+                <div class="cloud-card bg-white p-6 rounded-2xl border border-indigo-50 shadow-sm" data-name="AWS Bedrock SageMaker Glue">
+                    <h4 class="font-bold text-orange-700">AWS Bedrock</h4>
+                    <p class="text-sm text-slate-500 mt-2">Deploying foundation models on top of your AWS Glue data lakes.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center pt-20 border-t border-slate-200">
+            <div class="bg-slate-900 text-white inline-block px-8 py-10 rounded-t-full">
+                <p class="text-slate-400 text-sm mb-1 uppercase tracking-widest">Written By</p>
+                <h3 class="text-3xl font-black mb-2">RAGHU</h3>
+                <a href="https://raghunathsawant.github.io" class="text-blue-400 hover:text-blue-300 transition-colors">raghunathsawant.github.io</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function filterServices() {
+            let input = document.getElementById('cloudSearch').value.toLowerCase();
+            let cards = document.getElementsByClassName('cloud-card');
+            for (let i = 0; i < cards.length; i++) {
+                let name = cards[i].getAttribute('data-name').toLowerCase();
+                cards[i].style.display = name.includes(input) ? "block" : "none";
+            }
+        }
+    </script>
 </body>
 </html>
