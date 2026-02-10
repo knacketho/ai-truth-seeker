@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Truth Seeker | Raghu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+        
+        body { font-family: 'Outfit', sans-serif; }
+        
+        .serif { font-family: 'Crimson Pro', serif; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-content h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+        }
+
+        .article-content h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid #3b82f6;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #475569;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+
+        .provider-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .provider-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 selection:bg-blue-100">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="font-black text-xl tracking-tighter italic">RAGHU<span class="text-blue-600">.</span></span>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-500">
+                <a href="#vision" class="hover:text-blue-600 transition-colors">Vision</a>
+                <a href="#article" class="hover:text-blue-600 transition-colors">Case Study</a>
+                <a href="#architecture" class="hover:text-blue-600 transition-colors">Architecture</a>
+                <a href="#providers" class="hover:text-blue-600 transition-colors">Providers</a>
+            </div>
+            <a href="https://raghunathsawant.github.io" class="bg-slate-900 text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20">Portfolio</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 px-6 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-20 pointer-events-none">
+            <div class="absolute top-20 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
+            <div class="absolute top-40 right-1/4 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl animate-float" style="animation-delay: 2s"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-8">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Case Study: Microsoft Hyderabad
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter leading-none italic uppercase">
+                AI Truth <span class="gradient-text">Seeker</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-500 font-light max-w-2xl mx-auto leading-relaxed">
+                The uncomfortable reality behind the AI hype cycle and why your 
+                <strong>Private Data</strong> is the only moat that matters.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 space-y-32 pb-32">
+        
+        <!-- The Hype vs. Reality Toggle Section -->
+        <section id="vision" class="scroll-mt-24">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Public AI is a Commodity.</h2>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            MNCs are currently "skills-dumping"—pushing generalized AI tools onto staff in a race to the bottom. But generic tools yield generic results.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-database text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg">The Hidden Assets</h4>
+                                <p class="text-slate-500">Internal logs, project impediments, and proprietary skill-boards are the "Gold" of the next decade.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-shield-halved text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg">Private Intelligence</h4>
+                                <p class="text-slate-500">Securely leveraging cloud infrastructure to turn internal data into an organizational brain.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[2.5rem] blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+                    <div class="relative bg-slate-900 rounded-[2rem] p-8 md:p-12 text-white overflow-hidden shadow-2xl">
+                        <div class="absolute top-0 right-0 p-8 opacity-10">
+                            <i class="fa-solid fa-microchip text-9xl"></i>
+                        </div>
+                        <h4 class="text-blue-400 font-bold mb-8 uppercase text-xs tracking-widest flex items-center gap-2">
+                            <span class="w-8 h-[1px] bg-blue-400"></span>
+                            The Intelligence Equation
+                        </h4>
+                        <div class="space-y-6">
+                            <div class="text-4xl md:text-5xl font-mono leading-tight">
+                                (Logs + Skills) <br>
+                                <span class="text-blue-500">×</span> Private Cloud <br>
+                                <span class="text-blue-500">=</span> <span class="text-white italic underline decoration-blue-500 underline-offset-8">Real IQ</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Public models provide the reasoning engine; your private data provides the wisdom. One is useless without the other in an enterprise context.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full Article Section -->
+        <section id="article" class="scroll-mt-24">
+            <div class="max-w-4xl mx-auto">
+                <!-- Article Header -->
+                <div class="text-center mb-16">
+                    <div class="inline-block bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                        Deep Dive
+                    </div>
+                    <h2 class="text-5xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
+                        Beyond the Hype: <br>
+                        <span class="serif italic font-semibold">Building True Organizational Intelligence</span>
+                    </h2>
+                    <div class="flex items-center justify-center gap-6 text-sm text-slate-500">
+                        <span><i class="fa-regular fa-clock mr-2"></i>12 min read</span>
+                        <span><i class="fa-regular fa-calendar mr-2"></i>February 2024</span>
+                        <span><i class="fa-solid fa-building mr-2"></i>Microsoft GTSC</span>
+                    </div>
+                </div>
+
+                <!-- Article Content -->
+                <div class="article-content serif text-lg text-slate-700">
+                    
+                    <div class="bg-slate-50 border-l-4 border-blue-500 p-8 rounded-r-2xl mb-12">
+                        <p class="text-2xl font-semibold text-slate-900 mb-4 leading-relaxed">
+                            "More AI" doesn't mean more value. The question isn't whether to adopt AI—it's whether you're building intelligence that actually matters to your organization.
+                        </p>
+                        <p class="text-sm text-slate-500 mb-0">
+                            — Core thesis from the Microsoft Hyderabad presentation
+                        </p>
+                    </div>
+
+                    <h3>The Skills-Dumping Epidemic</h3>
+                    
+                    <p>
+                        Walk into any major enterprise today, and you'll witness what I call "skills-dumping"—the corporate equivalent of throwing technology at problems without understanding the underlying need. Organizations are racing to equip their workforce with AI tools, ChatGPT licenses, and Copilot subscriptions, treating AI adoption as a checkbox exercise rather than a strategic transformation.
+                    </p>
+
+                    <p>
+                        The irony? While companies spend millions on public AI subscriptions, their most valuable asset—internal organizational knowledge—remains siloed, unstructured, and inaccessible. Project retrospectives gathering dust in Confluence. Employee skill matrices trapped in outdated spreadsheets. Impediment logs that never inform future planning. Cross-functional expertise that exists only in the minds of individuals who might leave tomorrow.
+                    </p>
+
+                    <blockquote>
+                        The real competitive advantage isn't access to GPT-4 or Claude—everyone has that. It's what you do with your proprietary data that separates leaders from followers.
+                    </blockquote>
+
+                    <h3>Why Public AI Is a Commodity</h3>
+
+                    <p>
+                        Let's be brutally honest: OpenAI, Anthropic, Google—they're all building phenomenal technology. But here's what they can't build: your organizational memory. They can't tell you which team members have successfully delivered similar projects. They can't identify recurring impediments across your sprints. They can't surface the hidden expertise within your 10,000-person workforce.
+                    </p>
+
+                    <p>
+                        Public AI models are democratized by design. Your competitors have the same access to GPT-4 that you do. The same prompting capabilities. The same underlying intelligence. When everyone has access to the same tools, those tools become commodities—necessary but not sufficient for competitive advantage.
+                    </p>
+
+                    <h4>The Three Levels of AI Maturity</h4>
+
+                    <p><strong>Level 1: Tool Access</strong> — Giving employees ChatGPT accounts. This is where most organizations stop. It's useful for individual productivity but creates zero organizational leverage.</p>
+
+                    <p><strong>Level 2: Workflow Integration</strong> — Embedding AI into existing processes through tools like GitHub Copilot or Salesforce Einstein. Better, but still generic. You're optimizing workflows that your competitors are also optimizing in identical ways.</p>
+
+                    <p><strong>Level 3: Private Intelligence</strong> — Building AI systems trained on, or augmented by, your proprietary data. This is where true competitive advantage lives. This is where most organizations should be but aren't.</p>
+
+                    <h3>Data-First, AI-Second: The Inverted Approach</h3>
+
+                    <p>
+                        The current enterprise approach is fundamentally backwards. Organizations ask: "How can we use AI?" when they should be asking: "What data do we have that nobody else has, and how can we make it intelligently accessible?"
+                    </p>
+
+                    <p>
+                        Consider a typical software engineering organization with 5,000 developers. Over five years, they've:
+                    </p>
+
+                    <ul>
+                        <li>Completed 10,000+ sprint retrospectives documenting what worked and what didn't</li>
+                        <li>Logged 50,000+ project impediments with resolution strategies</li>
+                        <li>Created 15,000+ technical design documents</li>
+                        <li>Built 200+ internal tools and frameworks</li>
+                        <li>Accumulated expertise across hundreds of technology stacks</li>
+                    </ul>
+
+                    <p>
+                        This is a gold mine of organizational intelligence. Yet when a new team starts a project, they're essentially starting from scratch, rediscovering problems that have been solved dozens of times before. Why? Because this knowledge isn't structured, isn't searchable, and isn't connected to the work they're doing.
+                    </p>
+
+                    <h3>The Architecture of Private Intelligence</h3>
+
+                    <p>
+                        Building true organizational AI isn't about picking the shiniest model or the trendiest framework. It's about creating a systematic approach to capture, structure, and leverage your proprietary data. Here's what that actually looks like:
+                    </p>
+
+                    <h4>1. Data Engineering Foundation</h4>
+
+                    <p>
+                        Before you think about AI, you need clean, accessible data. This means:
+                    </p>
+
+                    <ul>
+                        <li><strong>Unified Data Lakes:</strong> Consolidate information from Jira, Confluence, GitHub, Slack, and internal databases into centralized repositories using tools like Azure Data Lake, Google BigQuery, or AWS S3.</li>
+                        <li><strong>Structured Ingestion Pipelines:</strong> Real-time data flows using Apache Kafka, Azure Data Factory, or Google Cloud Dataflow that continuously update your knowledge base.</li>
+                        <li><strong>Metadata Enrichment:</strong> Tagging, categorization, and relationship mapping that makes your data semantically searchable.</li>
+                    </ul>
+
+                    <h4>2. Vector Search & RAG Architecture</h4>
+
+                    <p>
+                        Once your data is structured, you need intelligent retrieval. This is where Retrieval-Augmented Generation (RAG) comes in:
+                    </p>
+
+                    <ul>
+                        <li>Convert all organizational documents into vector embeddings</li>
+                        <li>Store them in vector databases (Pinecone, Weaviate, Azure Cognitive Search)</li>
+                        <li>When someone asks a question, retrieve relevant context and feed it to your AI model</li>
+                        <li>The AI responds not with generic knowledge but with your organization's specific experience</li>
+                    </ul>
+
+                    <h4>3. Private Model Deployment</h4>
+
+                    <p>
+                        Security and privacy are non-negotiable. Your organizational data cannot leave your security perimeter. This requires:
+                    </p>
+
+                    <ul>
+                        <li><strong>Azure OpenAI Service:</strong> GPT-4 and GPT-3.5 models running entirely within your Azure tenant</li>
+                        <li><strong>Google Vertex AI:</strong> Gemini and PaLM models with data residency guarantees</li>
+                        <li><strong>AWS Bedrock:</strong> Multiple foundation models (Claude, Llama, Cohere) with VPC isolation</li>
+                    </ul>
+
+                    <p>
+                        The key insight: these aren't just cloud services—they're ways to run frontier AI models on your proprietary data without exposing that data to the model providers.
+                    </p>
+
+                    <h3>Real-World Implementation: A Case Study</h3>
+
+                    <p>
+                        At Microsoft's GTSC Hyderabad facility, we explored a practical implementation for a 2,000-person engineering organization. The goal: reduce project setup time and impediment resolution by making organizational knowledge instantly accessible.
+                    </p>
+
+                    <h4>The Problem</h4>
+
+                    <p>
+                        New projects were taking 6-8 weeks to ramp up as teams researched similar past projects, identified potential impediments, and located subject matter experts. Recurring impediments were being solved repeatedly across different teams with no knowledge sharing.
+                    </p>
+
+                    <h4>The Solution</h4>
+
+                    <p>
+                        We designed a three-tier system:
+                    </p>
+
+                    <p><strong>Tier 1: Knowledge Aggregation</strong></p>
+                    <ul>
+                        <li>Automated daily ingestion of Jira tickets, Confluence pages, and GitHub repositories</li>
+                        <li>NLP-based extraction of impediments, solutions, and key decisions</li>
+                        <li>Skills matrix generation from code contributions and documentation ownership</li>
+                    </ul>
+
+                    <p><strong>Tier 2: Intelligent Retrieval</strong></p>
+                    <ul>
+                        <li>Azure Cognitive Search with custom semantic ranking</li>
+                        <li>Vector embeddings for conceptual similarity matching</li>
+                        <li>Hybrid search combining keywords, embeddings, and metadata filters</li>
+                    </ul>
+
+                    <p><strong>Tier 3: Contextual AI Interface</strong></p>
+                    <ul>
+                        <li>Natural language query interface: "Show me similar projects to X that faced API integration challenges"</li>
+                        <li>GPT-4 powered synthesis of multiple sources into coherent recommendations</li>
+                        <li>Automatic expert identification and notification</li>
+                    </ul>
+
+                    <h4>The Results</h4>
+
+                    <p>
+                        Within the pilot program:
+                    </p>
+
+                    <ul>
+                        <li>Project ramp-up time reduced from 6-8 weeks to 2-3 weeks</li>
+                        <li>70% reduction in repeated impediments across teams</li>
+                        <li>4x increase in cross-team knowledge sharing</li>
+                        <li>Measurable improvement in new hire onboarding efficiency</li>
+                    </ul>
+
+                    <h3>The Cloud Provider Decision Matrix</h3>
+
+                    <p>
+                        Choosing the right cloud infrastructure is critical. Each major provider offers distinct advantages:
+                    </p>
+
+                    <p><strong>Azure:</strong> Best for Microsoft-heavy enterprises. Seamless integration with Microsoft 365, Teams, and existing enterprise architecture. Azure OpenAI Service provides the most mature enterprise GPT deployment with data residency controls.</p>
+
+                    <p><strong>GCP:</strong> Superior for data-intensive organizations. BigQuery's analytical capabilities combined with Vertex AI create powerful real-time intelligence pipelines. Gemini 1.5's massive context window enables novel organizational memory applications.</p>
+
+                    <p><strong>AWS:</strong> Most flexible and comprehensive. Bedrock's multi-model approach lets you choose between Claude, Llama, and others based on specific use cases. Unmatched ecosystem of data services and enterprise integrations.</p>
+
+                    <h3>Beyond Technology: Cultural Transformation</h3>
+
+                    <p>
+                        Here's what nobody talks about: technology is the easy part. The hard part is getting your organization to actually feed the system with quality data. This requires:
+                    </p>
+
+                    <ul>
+                        <li><strong>Documentation Culture:</strong> Making comprehensive retrospectives and knowledge sharing non-negotiable parts of project completion</li>
+                        <li><strong>Skill Transparency:</strong> Creating psychological safety for employees to honestly document their expertise and knowledge gaps</li>
+                        <li><strong>Incentive Alignment:</strong> Rewarding knowledge sharing and penalizing knowledge hoarding</li>
+                        <li><strong>Executive Commitment:</strong> This can't be an IT initiative—it needs C-suite sponsorship and sustained investment</li>
+                    </ul>
+
+                    <h3>The Road Ahead: Where We're Going</h3>
+
+                    <p>
+                        The future of enterprise AI isn't more powerful models—it's more intelligent integration of organizational knowledge. We're moving toward:
+                    </p>
+
+                    <ul>
+                        <li><strong>Proactive Intelligence:</strong> AI that identifies problems before they occur based on historical patterns</li>
+                        <li><strong>Automated Expertise Matching:</strong> Connecting people with complementary skills for optimal team formation</li>
+                        <li><strong>Continuous Learning Systems:</strong> Organizations that get smarter with every project, every impediment, every solution</li>
+                        <li><strong>Predictive Resource Allocation:</strong> AI-driven forecasting of project needs based on historical similarity</li>
+                    </ul>
+
+                    <h3>Conclusion: Stop Skills-Dumping, Start Building Intelligence</h3>
+
+                    <p>
+                        The AI revolution everyone's talking about isn't happening in Sam Altman's keynotes or Demis Hassabis's research labs. It's happening—or should be happening—in the unsexy work of data engineering, cultural transformation, and systematic knowledge capture within your organization.
+                    </p>
+
+                    <p>
+                        Public AI is table stakes. Your data is the differentiator. The question isn't whether AI will transform your organization—it's whether you'll transform your organization to leverage AI properly.
+                    </p>
+
+                    <p>
+                        Stop dumping skills. Start building intelligence. The infrastructure exists. The models are ready. The only question is: are you?
+                    </p>
+
+                    <div class="bg-blue-50 border border-blue-100 p-8 rounded-2xl mt-12">
+                        <p class="text-sm text-blue-900 font-semibold mb-4">
+                            <i class="fa-solid fa-lightbulb mr-2"></i>Key Takeaways
+                        </p>
+                        <ul class="space-y-2 text-sm text-blue-800">
+                            <li><strong>Invert your approach:</strong> Data first, AI second</li>
+                            <li><strong>Private data is your moat:</strong> Public models are commodities</li>
+                            <li><strong>Infrastructure matters:</strong> Choose cloud providers based on your data strategy</li>
+                            <li><strong>Culture eats technology:</strong> No system works without organizational buy-in</li>
+                            <li><strong>Start small, scale systematically:</strong> Pilot programs prove ROI before massive investment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Table -->
+        <section id="architecture" class="scroll-mt-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-slate-900 mb-4">Phase 1: Engineering the Foundation</h2>
+                <p class="text-slate-500">How major cloud providers map to the Truth Seeker framework.</p>
+            </div>
+            
+            <div class="bg-white rounded-[2rem] border border-slate-200 shadow-xl shadow-slate-200/50 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-slate-50">
+                                <th class="px-8 py-6 font-bold text-slate-400 uppercase text-xs">Cloud Provider</th>
+                                <th class="px-8 py-6 font-bold text-slate-400 uppercase text-xs">Data Engineering</th>
+                                <th class="px-8 py-6 font-bold text-slate-400 uppercase text-xs">Private AI Ops</th>
+                                <th class="px-8 py-6 font-bold text-slate-400 uppercase text-xs">Truth Potential</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50 transition-colors group">
+                                <td class="px-8 py-8">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white text-lg">
+                                            <i class="fa-brands fa-microsoft"></i>
+                                        </div>
+                                        <span class="font-bold text-lg text-slate-800">Azure</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-8 font-medium text-slate-600">Microsoft Fabric, Data Factory</td>
+                                <td class="px-8 py-8 font-medium text-slate-600">Azure OpenAI, Vector Search</td>
+                                <td class="px-8 py-8">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold uppercase">High Enterprise</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="px-8 py-8">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-xl bg-green-600 flex items-center justify-center text-white text-lg">
+                                            <i class="fa-brands fa-google"></i>
+                                        </div>
+                                        <span class="font-bold text-lg text-slate-800">GCP</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-8 font-medium text-slate-600">BigQuery, Cloud Dataflow</td>
+                                <td class="px-8 py-8 font-medium text-slate-600">Vertex AI (Gemini 1.5)</td>
+                                <td class="px-8 py-8">
+                                    <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase">Data Native</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors border-none">
+                                <td class="px-8 py-8">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-xl bg-orange-600 flex items-center justify-center text-white text-lg">
+                                            <i class="fa-brands fa-aws"></i>
+                                        </div>
+                                        <span class="font-bold text-lg text-slate-800">AWS</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-8 font-medium text-slate-600">AWS Glue, Redshift</td>
+                                <td class="px-8 py-8 font-medium text-slate-600">Amazon Bedrock, SageMaker</td>
+                                <td class="px-8 py-8">
+                                    <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-bold uppercase">Hybrid Master</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cloud Provider Search & Comparison -->
+        <section id="providers" class="scroll-mt-24">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-slate-900 mb-4">Cloud Provider AI Solutions Explorer</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">
+                    Search and compare AI capabilities across Azure, GCP, and AWS. Find the right tools for your organization's intelligence infrastructure.
+                </p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto mb-12">
+                <div class="relative group">
+                    <i class="fa-solid fa-magnifying-glass absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 text-xl group-focus-within:text-blue-600 transition-colors"></i>
+                    <input 
+                        type="text" 
+                        id="providerSearch" 
+                        onkeyup="filterProviders()" 
+                        placeholder="Search by provider, service, or capability..." 
+                        class="w-full bg-white border-2 border-slate-200 rounded-2xl py-5 pl-16 pr-8 text-lg text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:outline-none transition-all shadow-lg"
+                    >
+                </div>
+                <div class="flex gap-3 mt-4 justify-center flex-wrap">
+                    <button onclick="quickFilter('azure')" class="px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold hover:bg-blue-100 transition-colors">
+                        <i class="fa-brands fa-microsoft mr-2"></i>Azure
+                    </button>
+                    <button onclick="quickFilter('gcp')" class="px-4 py-2 bg-green-50 text-green-600 rounded-full text-sm font-semibold hover:bg-green-100 transition-colors">
+                        <i class="fa-brands fa-google mr-2"></i>GCP
+                    </button>
+                    <button onclick="quickFilter('aws')" class="px-4 py-2 bg-orange-50 text-orange-600 rounded-full text-sm font-semibold hover:bg-orange-100 transition-colors">
+                        <i class="fa-brands fa-aws mr-2"></i>AWS
+                    </button>
+                    <button onclick="quickFilter('vector')" class="px-4 py-2 bg-purple-50 text-purple-600 rounded-full text-sm font-semibold hover:bg-purple-100 transition-colors">
+                        Vector Search
+                    </button>
+                    <button onclick="quickFilter('')" class="px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-semibold hover:bg-slate-200 transition-colors">
+                        Clear
+                    </button>
+                </div>
+            </div>
+
+            <!-- Provider Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="providerCards">
+                
+                <!-- Azure Cards -->
+                <div class="provider-card bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-500 hover:shadow-xl transition-all" data-keywords="azure microsoft openai gpt cognitive search vector rag enterprise">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center text-white text-2xl">
+                            <i class="fa-brands fa-microsoft"></i>
+                        </div>
+                        <span class="tag bg-blue-100 text-blue-700">Azure</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">Azure OpenAI Service</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Enterprise-grade GPT-4, GPT-3.5, and DALL-E models with data residency, private networking, and compliance guarantees.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Private endpoint deployment</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>SLA-backed availability</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>RBAC integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="provider-card bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-500 hover:shadow-xl transition-all" data-keywords="azure microsoft cognitive search vector semantic rag retrieval">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center text-white text-2xl">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <span class="tag bg-blue-100 text-blue-700">Azure</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">Azure Cognitive Search</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Vector search with semantic ranking, custom skills, and AI-powered indexing for intelligent document retrieval.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Hybrid search (keyword + vector)</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Semantic ranking</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Custom skillsets</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="provider-card bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-blue-500 hover:shadow-xl transition-all" data-keywords="azure microsoft fabric data engineering pipeline synapse">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center text-white text-2xl">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <span class="tag bg-blue-100 text-blue-700">Azure</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">Microsoft Fabric</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Unified analytics platform combining data engineering, data science, and business intelligence with AI integration.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>OneLake unified storage</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Real-time analytics</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Power BI integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GCP Cards -->
+                <div class="provider-card bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-green-500 hover:shadow-xl transition-all" data-keywords="gcp google vertex ai gemini palm llm enterprise">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-green-600 flex items-center justify-center text-white text-2xl">
+                            <i class="fa-brands fa-google"></i>
+                        </div>
+                        <span class="tag bg-green-100 text-green-700">GCP</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">Vertex AI (Gemini)</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Next-generation multimodal AI with Gemini 1.5's 2M token context window for massive organizational memory applications.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>2M token context window</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Multimodal capabilities</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Custom model training</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="provider-card bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-green-500 hover:shadow-xl transition-all" data-keywords="gcp google bigquery data warehouse analytics sql ml">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-green-600 flex items-center justify-center text-white text-2xl">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <span class="tag bg-green-100 text-green-700">GCP</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">BigQuery ML</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Serverless data warehouse with built-in ML capabilities, enabling SQL-based machine learning at petabyte scale.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>SQL-based ML training</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Petabyte-scale queries</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Real-time analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="provider-card bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-green-500 hover:shadow-xl transition-all" data-keywords="gcp google vector search matching similarity embeddings">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-green-600 flex items-center justify-center text-white text-2xl">
+                            <i class="fa-solid fa-vector-square"></i>
+                        </div>
+                        <span class="tag bg-green-100 text-green-700">GCP</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">Vertex AI Matching Engine</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        High-scale, low-latency vector similarity search for semantic search and recommendation systems.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Billion-scale vector search</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Sub-millisecond latency</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Auto-scaling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AWS Cards -->
+                <div class="provider-card bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-orange-500 hover:shadow-xl transition-all" data-keywords="aws amazon bedrock claude llama cohere foundation models">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-orange-600 flex items-center justify-center text-white text-2xl">
+                            <i class="fa-brands fa-aws"></i>
+                        </div>
+                        <span class="tag bg-orange-100 text-orange-700">AWS</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">Amazon Bedrock</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Multi-model AI platform with Claude, Llama, Cohere, and Stability AI accessible through a single API with private VPC deployment.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Multiple foundation models</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>VPC isolation</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Custom model fine-tuning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="provider-card bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-orange-500 hover:shadow-xl transition-all" data-keywords="aws amazon sagemaker ml training deployment inference">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-orange-600 flex items-center justify-center text-white text-2xl">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <span class="tag bg-orange-100 text-orange-700">AWS</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">SageMaker</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        End-to-end ML platform for building, training, and deploying custom models with integrated MLOps capabilities.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>AutoML capabilities</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Model monitoring</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Distributed training</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="provider-card bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-orange-500 hover:shadow-xl transition-all" data-keywords="aws amazon opensearch vector search elasticsearch kibana">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-orange-600 flex items-center justify-center text-white text-2xl">
+                            <i class="fa-solid fa-search"></i>
+                        </div>
+                        <span class="tag bg-orange-100 text-orange-700">AWS</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-3">OpenSearch Service</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Managed search and analytics engine with k-NN vector search for building semantic search applications.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>k-NN vector search</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Full-text search</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <i class="fa-solid fa-check text-green-500"></i>
+                            <span>Log analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="hidden text-center py-20">
+                <div class="text-6xl mb-6">🔍</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-3">No matches found</h3>
+                <p class="text-slate-500 mb-6">Try different keywords or clear your search</p>
+                <button onclick="quickFilter('')" class="px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors">
+                    Clear Search
+                </button>
+            </div>
+        </section>
+
+        <!-- Ecosystem Explorer -->
+        <section id="explorer" class="scroll-mt-24">
+            <div class="bg-indigo-900 rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-2xl">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-800 rounded-full -mr-32 -mt-32 opacity-50"></div>
+                
+                <div class="relative z-10">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                        <div>
+                            <h2 class="text-4xl font-black text-white mb-4">Ecosystem Explorer</h2>
+                            <p class="text-indigo-200 max-w-lg">
+                                Map organizational needs to infrastructure. Type a keyword like "Gemini", "Search", or "Logs" to see the alignment.
+                            </p>
+                        </div>
+                        <div class="shrink-0 text-white flex gap-4">
+                            <div class="text-center">
+                                <div id="active-count" class="text-2xl font-bold">3</div>
+                                <div class="text-[10px] uppercase tracking-widest text-indigo-300">Tools Matching</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative mb-12 group">
+                        <i class="fa-solid fa-magnifying-glass absolute left-6 top-1/2 -translate-y-1/2 text-indigo-400 text-xl group-focus-within:text-blue-400 transition-colors"></i>
+                        <input type="text" id="cloudSearch" onkeyup="filterServices()" 
+                               placeholder="Search technologies..." 
+                               class="w-full bg-white/10 border border-white/20 rounded-2xl py-6 pl-16 pr-8 text-xl text-white placeholder:text-indigo-400 focus:bg-white focus:text-slate-900 focus:outline-none transition-all duration-300">
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6" id="servicesList">
+                        <div class="cloud-card group glass-card p-8 rounded-3xl border-none hover:bg-white transition-all duration-300 cursor-default" data-name="Azure OpenAI Search Logs Fabric">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-600/10 text-blue-400 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center mb-6 transition-all">
+                                <i class="fa-solid fa-cloud-bolt"></i>
+                            </div>
+                            <h4 class="font-black text-white group-hover:text-slate-900 text-xl mb-3">Azure Enterprise</h4>
+                            <p class="text-sm text-indigo-200 group-hover:text-slate-500 leading-relaxed">
+                                Private search over internal documentation, Jira logs, and Confluence pages using RAG architectures.
+                            </p>
+                        </div>
+
+                        <div class="cloud-card group glass-card p-8 rounded-3xl border-none hover:bg-white transition-all duration-300 cursor-default" data-name="GCP Vertex AI Gemini BigQuery ML">
+                            <div class="w-12 h-12 rounded-2xl bg-green-600/10 text-green-400 group-hover:bg-green-600 group-hover:text-white flex items-center justify-center mb-6 transition-all">
+                                <i class="fa-solid fa-diagram-project"></i>
+                            </div>
+                            <h4 class="font-black text-white group-hover:text-slate-900 text-xl mb-3">GCP Dataflow</h4>
+                            <p class="text-sm text-indigo-200 group-hover:text-slate-500 leading-relaxed">
+                                Real-time processing of employee skill-boards and feedback loops into BigQuery for instant insight.
+                            </p>
+                        </div>
+
+                        <div class="cloud-card group glass-card p-8 rounded-3xl border-none hover:bg-white transition-all duration-300 cursor-default" data-name="AWS Bedrock SageMaker Glue">
+                            <div class="w-12 h-12 rounded-2xl bg-orange-600/10 text-orange-400 group-hover:bg-orange-600 group-hover:text-white flex items-center justify-center mb-6 transition-all">
+                                <i class="fa-solid fa-cubes"></i>
+                            </div>
+                            <h4 class="font-black text-white group-hover:text-slate-900 text-xl mb-3">AWS Bedrock</h4>
+                            <p class="text-sm text-indigo-200 group-hover:text-slate-500 leading-relaxed">
+                                Modular foundation model selection allowing organizations to switch engines based on specific departmental needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Call to Action -->
+        <section class="text-center py-20 border-y border-slate-200">
+            <h2 class="text-4xl md:text-5xl font-black mb-8 italic">READY TO SEEK THE <span class="text-blue-600">TRUTH</span>?</h2>
+            <p class="text-slate-500 mb-10 max-w-xl mx-auto">
+                Stop dumping skills and start engineering intelligence. The framework is ready for deployment.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="mailto:contact@raghusawant.com" class="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-500/30">Connect with Raghu</a>
+                <a href="https://raghunathsawant.github.io" class="bg-white border border-slate-200 text-slate-900 px-10 py-5 rounded-2xl font-bold hover:bg-slate-50 transition-all">View Full Repository</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-24 pb-12 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-4xl font-black mb-4 italic">RAGHU<span class="text-blue-500">.</span></h3>
+                <p class="text-slate-400 max-w-sm mb-8">
+                    Bridging the gap between engineering reality and corporate vision since 2018.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+            <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10">
+                <p class="text-sm uppercase tracking-widest text-slate-500 mb-2">Original Presentation</p>
+                <h4 class="text-xl font-bold mb-4">Microsoft GTSC, Hyderabad</h4>
+                <p class="text-slate-400 text-sm mb-6">Discussed as part of the Enterprise AI Modernization track.</p>
+                <div class="text-blue-400 font-mono text-xs">REF: CASE_STUDY_AI_21_02</div>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto mt-24 pt-8 border-t border-white/5 text-center text-slate-500 text-xs">
+            © 2024 Raghu Sawant. All Rights Reserved. Built with Tailwind CSS & Strategic Intent.
+        </div>
+    </footer>
+
+    <script>
+        function filterServices() {
+            const input = document.getElementById('cloudSearch').value.toLowerCase();
+            const cards = document.getElementsByClassName('cloud-card');
+            const countEl = document.getElementById('active-count');
+            let activeCount = 0;
+
+            for (let i = 0; i < cards.length; i++) {
+                const name = cards[i].getAttribute('data-name').toLowerCase();
+                if (name.includes(input)) {
+                    cards[i].style.display = "block";
+                    cards[i].style.opacity = "1";
+                    activeCount++;
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+            
+            countEl.textContent = activeCount;
+
+            const container = document.getElementById('servicesList');
+            if (activeCount === 0) {
+                if (!document.getElementById('no-results')) {
+                    const noRes = document.createElement('div');
+                    noRes.id = 'no-results';
+                    noRes.className = 'col-span-full py-20 text-center text-indigo-300 italic';
+                    noRes.textContent = "No tools found matching that framework keyword...";
+                    container.appendChild(noRes);
+                }
+            } else {
+                const noRes = document.getElementById('no-results');
+                if (noRes) noRes.remove();
+            }
+        }
+
+        function filterProviders() {
+            const input = document.getElementById('providerSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.provider-card');
+            const noResults = document.getElementById('noResults');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const keywords = card.getAttribute('data-keywords').toLowerCase();
+                if (keywords.includes(input) || input === '') {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        }
+
+        function quickFilter(keyword) {
+            document.getElementById('providerSearch').value = keyword;
+            filterProviders();
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
